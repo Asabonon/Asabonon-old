@@ -1,0 +1,54 @@
+<html>
+<body>
+<h2><p style="text-align: center">Система безопасного</h2>
+<h2><p style="text-align: center">включения вентилятора</h2>
+
+
+<script type="text/javascript">
+var on = 0;
+var on2 = 0;
+var fan = 0;
+var fan1 = ['off','on'];
+
+
+function onoff() {
+on = on ^ 1;
+document.getElementById("on1").innerHTML = on;
+fanoff()
+};
+
+function onoff2() {
+on2 = on2 ^ 1;
+document.getElementById("on2").innerHTML = on2;
+fanoff()
+}
+
+function fanoff() {
+fan = on & on2;
+if (fan == 1) {
+document.getElementById("fan1").innerHTML = fan1[1];
+} else {
+document.getElementById("fan1").innerHTML = fan1[0];
+}
+};
+</script>
+
+
+
+
+<p style="text-align: center"><button type="button" onclick="onoff()">button1</button>
+<p style="text-align: center">on: <a id="on1">0</a></p>
+
+<p style="text-align: center"><button type="button" onclick="onoff2()">button2</button>
+<p style="text-align: center">on: <a id="on2">0</a></p>
+
+<p style="text-align: center"><label>Fan</label>
+<p style="text-align: center">on: <a id="fan1">off</a></p>
+
+
+
+
+
+
+</body>
+</html>
